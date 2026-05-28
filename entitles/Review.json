@@ -1,0 +1,39 @@
+{
+  "name": "Review",
+  "type": "object",
+  "properties": {
+    "seller_email": {
+      "type": "string",
+      "description": "Email of the seller being reviewed"
+    },
+    "seller_name": {
+      "type": "string"
+    },
+    "listing_id": {
+      "type": "string",
+      "description": "ID of the listing the transaction was about"
+    },
+    "listing_title": {
+      "type": "string"
+    },
+    "reviewer_name": {
+      "type": "string"
+    },
+    "reviewer_email": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "number",
+      "description": "Rating 1-5 stars"
+    },
+    "comment": {
+      "type": "string",
+      "description": "Written review"
+    }
+  },
+  "required": [
+    "seller_email",
+    "rating",
+    "reviewer_email"
+  ]
+}

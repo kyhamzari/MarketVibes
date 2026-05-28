@@ -1,0 +1,55 @@
+{
+  "name": "CurrencyAd",
+  "type": "object",
+  "properties": {
+    "seller_name": {
+      "type": "string"
+    },
+    "seller_email": {
+      "type": "string"
+    },
+    "seller_whatsapp": {
+      "type": "string"
+    },
+    "seller_phone": {
+      "type": "string"
+    },
+    "from_currency": {
+      "type": "string",
+      "description": "Currency being sold/exchanged from"
+    },
+    "to_currency": {
+      "type": "string",
+      "description": "Currency being bought/exchanged to"
+    },
+    "rate": {
+      "type": "string",
+      "description": "Their offered rate e.g. 1 USD = 1600 NGN"
+    },
+    "amount_available": {
+      "type": "string",
+      "description": "How much is available"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Extra details or terms"
+    },
+    "location": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "closed"
+      ],
+      "default": "active"
+    }
+  },
+  "required": [
+    "from_currency",
+    "to_currency",
+    "rate",
+    "seller_email"
+  ]
+}

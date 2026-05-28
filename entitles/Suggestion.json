@@ -1,0 +1,38 @@
+{
+  "name": "Suggestion",
+  "type": "object",
+  "properties": {
+    "content": {
+      "type": "string",
+      "description": "Suggestion or comment text"
+    },
+    "author_name": {
+      "type": "string"
+    },
+    "author_email": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "suggestion",
+        "comment",
+        "bug",
+        "praise"
+      ],
+      "default": "suggestion"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "reviewed",
+        "implemented"
+      ],
+      "default": "new"
+    }
+  },
+  "required": [
+    "content"
+  ]
+}

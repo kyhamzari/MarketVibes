@@ -1,0 +1,94 @@
+{
+  "name": "Travel",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Trip or package title"
+    },
+    "destination": {
+      "type": "string",
+      "description": "Destination city/country"
+    },
+    "origin": {
+      "type": "string",
+      "description": "Departure location"
+    },
+    "description": {
+      "type": "string",
+      "description": "Details about the trip"
+    },
+    "travel_type": {
+      "type": "string",
+      "enum": [
+        "flight",
+        "tour_package",
+        "hotel",
+        "visa_assistance",
+        "cruise",
+        "road_trip",
+        "other"
+      ],
+      "description": "Type of travel offering"
+    },
+    "price": {
+      "type": "number",
+      "description": "Price in USD"
+    },
+    "price_type": {
+      "type": "string",
+      "enum": [
+        "per_person",
+        "per_group",
+        "per_night",
+        "total"
+      ],
+      "default": "per_person"
+    },
+    "duration_days": {
+      "type": "number",
+      "description": "Duration in days"
+    },
+    "departure_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Departure date"
+    },
+    "return_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Return date"
+    },
+    "seats_available": {
+      "type": "number",
+      "description": "Number of available seats/spots"
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Image URLs"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "available",
+        "sold_out",
+        "cancelled"
+      ],
+      "default": "available"
+    },
+    "poster_name": {
+      "type": "string"
+    },
+    "poster_email": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "destination",
+    "travel_type"
+  ]
+}
