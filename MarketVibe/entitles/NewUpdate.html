@@ -1,0 +1,42 @@
+{
+  "name": "NewsUpdate",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "News headline"
+    },
+    "content": {
+      "type": "string",
+      "description": "Full news content"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "general",
+        "marketplace",
+        "jobs",
+        "scholarships",
+        "travel",
+        "currency",
+        "announcement"
+      ],
+      "default": "general"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Optional cover image"
+    },
+    "author_name": {
+      "type": "string"
+    },
+    "pinned": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "title",
+    "content"
+  ]
+}
