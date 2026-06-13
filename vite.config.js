@@ -18,3 +18,10 @@ export default defineConfig({
     react(),
   ]
 });
+import { defineConfig } from 'vite'
+import react from '@vitejs/react-swc' // or '@vitejs/plugin-react'
+
+export default defineConfig({
+  plugins: [react()],
+  base: '/kyhamzari/MarketVibes/', // 👈 Replace with your exact repository name
+})
