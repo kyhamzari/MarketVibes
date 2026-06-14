@@ -2,17 +2,15 @@ import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import base44 from "@base44/vite-plugin"
 
-// https://vite.dev/config/
 export default defineConfig(({ mode }) => {
-  // Explicitly load .env files relative to the current working directory
-  // Setting the third argument to '' loads all variables regardless of the VITE_ prefix
   const env = loadEnv(mode, process.cwd(), '');
 
   return {
-    logLevel: 'error', // Suppress warnings, only show errors
+    // 👈 ADD THIS: Sets the base path to your GitHub repository name during production builds
+    base: process.env.NODE_ENV === 'production' ? '/kyhamzari/MarketVibes/' : '/', 
+    logLevel: 'error',
     plugins: [
       base44({
-        // Safely reads the flag from your system process OR your local .env configuration file
         legacySDKImports: (process.env.BASE44_LEGACY_SDK_IMPORTS || env.BASE44_LEGACY_SDK_IMPORTS) === 'true',
         hmrNotifier: true,
         navigationNotifier: true,
@@ -21,9 +19,5 @@ export default defineConfig(({ mode }) => {
       }),
       react(),
     ],
-    server: {
-      port: 3000,
-      open: true,
-    }
   };
 });
