@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     // 👈 ADD THIS: Sets the base path to your GitHub repository name during production builds
-    base: process.env.NODE_ENV === 'production' ? '/kyhamzari/MarketVibes/' : '/', 
+    base: process.env.NODE_ENV === 'production' ? '/MarketVibes/' : '/', 
     logLevel: 'error',
     plugins: [
       base44({
